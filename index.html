@@ -79,90 +79,86 @@ footer{text-align:center;color:#9c897d;font-size:11px;margin:17px 0 0}
 <div class="wall"></div><div class="window"></div><div class="curtain"></div><div class="shelf"></div><div class="plant"></div><div class="sofa"></div><div class="rug"></div><div class="floorline"></div>
 <div class="decor-side"></div><div class="decor-lamp"></div><div class="decor-basket"></div><div class="speech" id="speech">こんにちは！きょうも一緒にいようね。</div>
 <div class="pet" id="pet">
-<svg viewBox="0 0 260 290" role="img" aria-label="ふわふわの赤茶色のレッサーパンダ、ぽんず">
+<svg viewBox="0 0 280 300" role="img" aria-label="赤い毛並みと白い頬、縞模様の大きなしっぽが特徴のレッサーパンダ、ぽんず">
 <defs>
- <radialGradient id="coat" cx="38%" cy="24%" r="78%"><stop stop-color="#e6a36c"/><stop offset=".48" stop-color="#c97845"/><stop offset="1" stop-color="#8e4d32"/></radialGradient>
- <radialGradient id="face" cx="45%" cy="24%" r="78%"><stop stop-color="#f5d9b7"/><stop offset=".72" stop-color="#e9c39d"/><stop offset="1" stop-color="#c9916b"/></radialGradient>
- <linearGradient id="ear" x2="0" y2="1"><stop stop-color="#c9784c"/><stop offset="1" stop-color="#8d4932"/></linearGradient>
- <linearGradient id="belly" x2="0" y2="1"><stop stop-color="#fff0d9"/><stop offset="1" stop-color="#dfc3a3"/></linearGradient>
- <linearGradient id="tail" x2="1" y2=".3"><stop stop-color="#b9663c"/><stop offset=".5" stop-color="#e1a06a"/><stop offset="1" stop-color="#a85b38"/></linearGradient>
- <filter id="soft"><feGaussianBlur stdDeviation="2.5"/></filter>
- <filter id="furShadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".2"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <radialGradient id="rpRed" cx="34%" cy="22%" r="82%"><stop stop-color="#e6a16a"/><stop offset=".42" stop-color="#bd653b"/><stop offset=".82" stop-color="#94472f"/><stop offset="1" stop-color="#713b2d"/></radialGradient>
+ <linearGradient id="rpCream" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#fff4df"/><stop offset=".62" stop-color="#f1dfc4"/><stop offset="1" stop-color="#d7b99a"/></linearGradient>
+ <linearGradient id="rpLeg" x2="0" y2="1"><stop stop-color="#6e4233"/><stop offset="1" stop-color="#3f302b"/></linearGradient>
+ <linearGradient id="rpTail" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#713d30"/><stop offset=".22" stop-color="#bd7147"/><stop offset=".4" stop-color="#75402f"/><stop offset=".58" stop-color="#d18a56"/><stop offset=".77" stop-color="#70402f"/><stop offset="1" stop-color="#b9653b"/></linearGradient>
+ <radialGradient id="rpEye"><stop stop-color="#6a4030"/><stop offset=".72" stop-color="#2b1c17"/><stop offset="1" stop-color="#120e0c"/></radialGradient>
+ <filter id="rpShadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="4"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <clipPath id="rpTailClip"><path d="M93 217 C45 220 17 250 28 274 C40 301 93 292 128 260 C147 243 143 220 125 212Z"/></clipPath>
+ <clipPath id="rpBodyClip"><path d="M82 174 Q58 188 63 225 Q67 263 111 267 Q151 272 183 252 Q207 231 193 192 Q183 169 158 164Z"/></clipPath>
 </defs>
-<!-- soft floor shadow -->
-<ellipse cx="130" cy="266" rx="77" ry="13" fill="#60402f" opacity=".16" filter="url(#soft)"/>
-<!-- enormous fluffy ringed tail behind the body -->
-<path d="M92 207 C43 224 23 266 51 275 C78 285 119 257 128 224 C136 197 116 190 92 207Z" fill="url(#tail)" stroke="#85482f" stroke-width="3"/>
-<path d="M48 263 Q62 274 77 263 Q89 253 96 244" fill="none" stroke="#f1c18d" stroke-width="13" stroke-linecap="round"/>
-<path d="M42 250 Q55 258 70 249 Q81 243 88 231" fill="none" stroke="#85482f" stroke-width="9" stroke-linecap="round"/>
-<path d="M57 273 Q72 278 87 266" fill="none" stroke="#f3d0a7" stroke-width="7" stroke-linecap="round"/>
-<!-- body, round and plush -->
-<path d="M72 174 C63 190 59 218 71 239 Q91 260 132 259 Q174 259 190 236 C201 213 190 181 174 166Z" fill="url(#coat)" stroke="#874a31" stroke-width="3"/>
-<path d="M91 191 Q77 215 91 244 Q109 257 132 255 Q157 256 172 241 Q183 218 166 191 Q143 177 91 191Z" fill="url(#belly)" opacity=".98"/>
-<!-- shoulders and tiny paws -->
-<path d="M76 202 Q58 207 62 229 Q66 245 87 240 L102 221Z" fill="#b96840" stroke="#874a31" stroke-width="2.5"/>
-<path d="M183 202 Q201 207 197 229 Q193 245 172 240 L157 221Z" fill="#b96840" stroke="#874a31" stroke-width="2.5"/>
-<path d="M65 229 Q76 239 91 230" fill="none" stroke="#f4d8b8" stroke-width="8" stroke-linecap="round"/>
-<path d="M168 230 Q183 239 194 229" fill="none" stroke="#f4d8b8" stroke-width="8" stroke-linecap="round"/>
-<!-- ears, with soft rounded tips -->
-<path d="M66 91 Q48 46 69 35 Q91 26 108 76 Q111 91 99 105Z" fill="url(#ear)" stroke="#874a31" stroke-width="3.5"/>
-<path d="M77 83 Q63 52 73 47 Q84 45 96 82 Q91 91 84 93Z" fill="#edb69d"/>
-<path d="M158 76 Q176 26 197 35 Q218 46 200 91 L167 105Z" fill="url(#ear)" stroke="#874a31" stroke-width="3.5"/>
-<path d="M170 82 Q184 45 195 47 Q205 52 191 83 Q184 91 177 93Z" fill="#edb69d"/>
-<!-- head silhouette -->
-<path d="M53 124 C49 87 78 63 111 66 Q130 58 149 66 C182 63 211 88 207 126 Q205 171 176 190 Q151 207 130 205 Q105 207 82 190 Q55 171 53 124Z" fill="url(#coat)" stroke="#874a31" stroke-width="3.5" filter="url(#furShadow)"/>
-<!-- pale forehead blaze and fluffy cheek ruffs -->
-<path d="M111 72 Q130 64 149 72 Q139 91 143 111 Q130 121 117 111 Q121 91 111 72Z" fill="#f0d4b0" opacity=".95"/>
-<path d="M63 130 Q52 148 68 168 Q80 181 96 171 Q91 151 99 135 Q80 124 63 130Z" fill="url(#face)"/>
-<path d="M197 130 Q208 148 192 168 Q180 181 164 171 Q169 151 161 135 Q180 124 197 130Z" fill="url(#face)"/>
-<!-- distinctive pale facial mask, not raccoon rings -->
-<path d="M67 121 Q77 98 105 105 Q117 111 116 134 Q108 150 92 151 Q74 148 67 135Z" fill="#f4e4cb"/>
-<path d="M193 121 Q183 98 155 105 Q143 111 144 134 Q152 150 168 151 Q186 148 193 135Z" fill="#f4e4cb"/>
-<!-- warm cinnamon eye patches -->
-<path d="M79 119 Q94 106 110 119 Q116 132 106 146 Q92 155 77 143 Q70 132 79 119Z" fill="#a95e3e" opacity=".96"/>
-<path d="M181 119 Q166 106 150 119 Q144 132 154 146 Q168 155 183 143 Q190 132 181 119Z" fill="#a95e3e" opacity=".96"/>
-<!-- eye highlights and soft eyelids -->
-<ellipse cx="97" cy="132" rx="7.2" ry="9.5" fill="#2b211d"/>
-<ellipse cx="163" cy="132" rx="7.2" ry="9.5" fill="#2b211d"/>
-<ellipse cx="99" cy="128" rx="2.7" ry="3.2" fill="#fff9ee"/>
-<ellipse cx="165" cy="128" rx="2.7" ry="3.2" fill="#fff9ee"/>
-<circle cx="93" cy="136" r="1.4" fill="#dca77d"/><circle cx="159" cy="136" r="1.4" fill="#dca77d"/>
-<path d="M87 119 Q97 112 108 119 M152 119 Q163 112 173 119" fill="none" stroke="#874a31" stroke-width="2.4" stroke-linecap="round"/>
-<!-- muzzle: two plump ivory cushions -->
-<path d="M105 148 Q111 138 125 144 Q130 147 130 156 Q124 168 112 166 Q101 163 100 155Z" fill="#fff0da"/>
-<path d="M130 156 Q130 147 135 144 Q149 138 155 148 L160 155 Q159 163 148 166 Q136 168 130 156Z" fill="#fff0da"/>
-<ellipse cx="130" cy="151" rx="7" ry="5.5" fill="#49312a"/>
-<path d="M130 157 Q126 166 117 164 M130 157 Q134 166 143 164" fill="none" stroke="#754735" stroke-width="2" stroke-linecap="round"/>
-<!-- subtle smile and whisker freckles -->
-<path d="M119 171 Q130 178 141 171" fill="none" stroke="#8b5741" stroke-width="1.8" stroke-linecap="round"/>
-<g fill="#9b654b"><circle cx="105" cy="158" r="1.2"/><circle cx="110" cy="162" r="1"/><circle cx="150" cy="158" r="1.2"/><circle cx="145" cy="162" r="1"/></g>
-<ellipse cx="83" cy="158" rx="12" ry="7" fill="#e99c8a" opacity=".38"/><ellipse cx="177" cy="158" rx="12" ry="7" fill="#e99c8a" opacity=".38"/>
-<!-- layered fur tufts around cheeks and crown -->
+<ellipse cx="135" cy="280" rx="83" ry="12" fill="#563c30" opacity=".13"/>
+<!-- Big unmistakably ringed red-panda tail -->
+<path d="M93 217 C45 220 17 250 28 274 C40 301 93 292 128 260 C147 243 143 220 125 212Z" fill="url(#rpTail)" stroke="#673b2d" stroke-width="3"/>
+<g clip-path="url(#rpTailClip)" fill="none" stroke-linecap="round">
+ <path d="M20 245 Q64 226 105 239" stroke="#f1c18e" stroke-width="13"/>
+ <path d="M22 266 Q66 245 117 257" stroke="#f1c18e" stroke-width="13"/>
+ <path d="M42 290 Q87 267 133 271" stroke="#f1c18e" stroke-width="11"/>
+ <path d="M20 251 Q66 232 106 245 M24 272 Q70 251 119 263" stroke="#75412f" stroke-width="3" opacity=".65"/>
+</g>
+<!-- short legs with dark stockings and rounded paws -->
+<path d="M79 220 Q67 236 74 261 Q80 275 102 269 L111 239Z" fill="url(#rpLeg)"/>
+<path d="M155 232 Q160 257 174 268 Q190 275 201 260 Q204 247 187 220Z" fill="url(#rpLeg)"/>
+<path d="M70 260 Q85 270 104 263 Q113 271 105 280 Q85 288 70 277Z" fill="#49352d"/>
+<path d="M169 262 Q183 271 199 256 Q211 263 201 276 Q183 287 169 277Z" fill="#49352d"/>
+<!-- plump russet body, not a generic round ball -->
+<path d="M82 174 Q58 188 63 225 Q67 263 111 267 Q151 272 183 252 Q207 231 193 192 Q183 169 158 164Z" fill="url(#rpRed)" stroke="#75402e" stroke-width="3" filter="url(#rpShadow)"/>
+<path d="M98 194 Q86 214 94 242 Q111 263 142 258 Q164 253 169 230 Q168 204 151 190 Q125 181 98 194Z" fill="url(#rpCream)" opacity=".96"/>
+<!-- fluffy neck ruff -->
+<path d="M79 166 Q68 183 83 202 Q97 215 111 201 Q125 218 140 202 Q156 214 171 195 Q184 177 166 163Z" fill="#e6b887" opacity=".85"/>
+<!-- head, wide crown tapering into a gentle muzzle -->
+<path d="M56 111 Q55 69 91 53 Q119 39 144 51 Q181 42 207 73 Q229 101 215 143 Q207 174 178 190 Q153 205 132 199 Q99 203 75 180 Q52 157 56 111Z" fill="url(#rpRed)" stroke="#75402e" stroke-width="3.5" filter="url(#rpShadow)"/>
+<!-- ears: rounded triangular, white outer tufts and deep inner fur -->
+<path d="M68 91 Q48 42 72 29 Q98 23 111 75 Q111 91 96 103Z" fill="#a95536" stroke="#75402e" stroke-width="3"/>
+<path d="M75 75 Q63 43 76 40 Q88 39 99 78 Q91 87 84 88Z" fill="#6c3e32"/>
+<path d="M75 77 Q65 50 76 47 Q86 47 94 76" fill="none" stroke="#e9c8a7" stroke-width="4" stroke-linecap="round"/>
+<path d="M166 75 Q179 23 205 29 Q229 42 209 91 L181 103Z" fill="#a95536" stroke="#75402e" stroke-width="3"/>
+<path d="M181 78 Q192 39 204 40 Q217 43 201 75 Q194 87 186 88Z" fill="#6c3e32"/>
+<path d="M186 76 Q198 47 205 47 Q216 50 202 77" fill="none" stroke="#e9c8a7" stroke-width="4" stroke-linecap="round"/>
+<!-- pale cheeks and muzzle are broad, soft, and separated from the red eye stripes -->
+<path d="M63 126 Q65 99 91 96 Q111 96 119 120 Q121 145 103 166 Q83 181 67 159 Q58 145 63 126Z" fill="url(#rpCream)"/>
+<path d="M201 126 Q199 99 173 96 Q153 96 145 120 Q143 145 161 166 Q181 181 197 159 Q206 145 201 126Z" fill="url(#rpCream)"/>
+<!-- signature russet tear markings: narrow diagonal streaks, not raccoon eye mask -->
+<path d="M79 108 Q93 95 109 108 Q115 119 109 132 Q104 139 99 132 Q102 120 91 117 Q84 117 79 124Z" fill="#a95838"/>
+<path d="M185 108 Q171 95 155 108 Q149 119 155 132 Q160 139 165 132 Q162 120 173 117 Q180 117 185 124Z" fill="#a95838"/>
+<!-- eyes small, glossy, warm and gentle -->
+<ellipse cx="96" cy="124" rx="7" ry="9" fill="url(#rpEye)"/>
+<ellipse cx="168" cy="124" rx="7" ry="9" fill="url(#rpEye)"/>
+<ellipse cx="98" cy="120" rx="2.5" ry="3" fill="#fff9ed"/>
+<ellipse cx="170" cy="120" rx="2.5" ry="3" fill="#fff9ed"/>
+<circle cx="92" cy="128" r="1.2" fill="#d9a47d"/><circle cx="164" cy="128" r="1.2" fill="#d9a47d"/>
+<!-- forehead blaze and soft brow -->
+<path d="M117 55 Q132 48 148 57 Q141 77 145 96 Q132 104 119 95 Q123 75 117 55Z" fill="#e7c49d" opacity=".92"/>
+<path d="M85 105 Q96 99 106 106 M158 106 Q169 99 179 105" fill="none" stroke="#743e2d" stroke-width="2" stroke-linecap="round"/>
+<!-- muzzle: small pale snout, tiny nose -->
+<path d="M109 145 Q116 132 132 138 Q145 132 153 145 Q157 161 143 170 Q131 176 119 170 Q105 162 109 145Z" fill="#fff1dc"/>
+<ellipse cx="132" cy="148" rx="7" ry="5.2" fill="#35251f"/>
+<path d="M132 154 Q128 163 119 160 M132 154 Q136 163 145 160" fill="none" stroke="#79503d" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M122 174 Q132 179 142 174" fill="none" stroke="#9b6650" stroke-width="1.5" stroke-linecap="round"/>
+<!-- cheeks, whisker dots and whiskers -->
+<ellipse cx="82" cy="157" rx="11" ry="6" fill="#e99e8c" opacity=".38"/><ellipse cx="182" cy="157" rx="11" ry="6" fill="#e99e8c" opacity=".38"/>
+<g fill="#9a684e"><circle cx="112" cy="158" r="1.2"/><circle cx="117" cy="163" r="1"/><circle cx="152" cy="158" r="1.2"/><circle cx="147" cy="163" r="1"/></g>
+<g fill="none" stroke="#f8eddd" stroke-width="1.3" stroke-linecap="round" opacity=".85"><path d="M111 157 Q91 152 74 158 M111 163 Q92 165 78 172 M153 157 Q173 152 190 158 M153 163 Q172 165 186 172"/></g>
+<!-- layered fine fur, following the direction of the coat -->
 <g fill="none" stroke-linecap="round">
- <g stroke="#f2c18e" stroke-width="2.3" opacity=".9">
-  <path d="M67 105l-7 -8 M74 94l-4 -9 M88 79l-2 -8 M103 73l-1 -7 M157 73l1 -7 M172 79l2 -8 M187 94l4 -9 M194 105l7 -8"/>
-  <path d="M62 143l-8 3 M65 153l-8 7 M73 166l-7 8 M187 166l7 8 M195 153l8 7 M198 143l8 3"/>
-  <path d="M79 184l-5 9 M91 190l-3 10 M169 190l3 10 M181 184l5 9"/>
+ <g stroke="#f1c28f" stroke-width="2" opacity=".82">
+  <path d="M66 105l-7 -7 M73 88l-4 -8 M88 68l-2 -8 M104 58l-1 -7 M159 58l1 -7 M176 68l2 -8 M191 88l4 -8 M198 105l7 -7"/>
+  <path d="M62 144l-8 2 M67 158l-8 7 M77 171l-6 8 M202 144l8 2 M197 158l8 7 M187 171l6 8"/>
+  <path d="M88 185l-5 8 M101 192l-3 9 M164 192l3 9 M177 185l5 8"/>
+  <path d="M91 222l-3 9 M105 232l-1 9 M158 232l1 9 M174 222l3 9"/>
  </g>
- <g stroke="#874a31" stroke-width="1.4" opacity=".58">
-  <path d="M75 102l-5 -7 M85 91l-3 -8 M98 84l-1 -7 M162 84l1 -7 M175 91l3 -8 M185 102l5 -7"/>
-  <path d="M71 174l-5 7 M82 180l-3 8 M178 180l3 8 M189 174l5 7"/>
-  <path d="M91 211l-3 8 M104 216l-1 8 M155 216l1 8 M168 211l3 8"/>
+ <g stroke="#783f2e" stroke-width="1.35" opacity=".52">
+  <path d="M78 95l-4 -6 M94 77l-2 -7 M111 68l-1 -7 M153 68l1 -7 M170 77l2 -7 M186 95l4 -6"/>
+  <path d="M76 180l-4 7 M91 190l-3 8 M173 190l3 8 M188 180l4 7"/>
+  <path d="M84 237l-2 7 M98 244l-1 7 M166 244l1 7 M180 237l2 7"/>
  </g>
 </g>
-<!-- fine chest and body fur -->
-<g fill="none" stroke="#fff0d9" stroke-width="1.8" stroke-linecap="round" opacity=".7">
- <path d="M112 190q-5 7 -3 13 M124 194q-3 7 -1 13 M137 194q3 7 1 13 M149 190q5 7 3 13"/>
- <path d="M95 235q6 5 12 3 M145 238q7 2 12 -3"/>
-</g>
-<!-- whiskers -->
-<g fill="none" stroke="#f6e8d5" stroke-width="1.4" stroke-linecap="round" opacity=".85">
- <path d="M101 158 Q80 153 68 158 M102 163 Q82 164 70 171 M159 158 Q180 153 192 158 M158 163 Q178 164 190 171"/>
-</g>
-<!-- little paw toes -->
-<g fill="none" stroke="#754735" stroke-width="1.4" stroke-linecap="round">
- <path d="M73 233l-1 5 M82 234l-1 5 M178 234l1 5 M187 233l1 5"/>
-</g>
+<!-- small chest wisps and paw toes -->
+<g fill="none" stroke="#fff0d9" stroke-width="1.8" stroke-linecap="round" opacity=".75"><path d="M116 201q-4 6 -2 12 M130 203q-2 7 0 13 M144 201q4 6 2 12 M109 245q6 4 11 2 M147 247q7 1 11 -3"/></g>
+<g fill="none" stroke="#d6b18e" stroke-width="1.4" stroke-linecap="round"><path d="M81 272l-1 5 M91 273l-1 5 M183 273l1 5 M194 270l1 5"/></g>
 </svg></div>
 </section>
 <aside class="side">
