@@ -79,40 +79,89 @@ footer{text-align:center;color:#9c897d;font-size:11px;margin:17px 0 0}
 <div class="wall"></div><div class="window"></div><div class="curtain"></div><div class="shelf"></div><div class="plant"></div><div class="sofa"></div><div class="rug"></div><div class="floorline"></div>
 <div class="decor-side"></div><div class="decor-lamp"></div><div class="decor-basket"></div><div class="speech" id="speech">こんにちは！きょうも一緒にいようね。</div>
 <div class="pet" id="pet">
-<svg viewBox="0 0 220 250" role="img" aria-label="赤茶色のレッサーパンダのぽんず">
-<ellipse cx="110" cy="222" rx="66" ry="12" fill="#8d6855" opacity=".15"/>
-<path d="M70 180 C35 193 20 225 43 234 C69 244 96 218 103 195" fill="#b96e43" stroke="#754a36" stroke-width="4"/>
-<path d="M44 226 Q56 237 69 226 Q78 216 85 210" fill="none" stroke="#f0c28f" stroke-width="8" stroke-linecap="round"/>
-<ellipse cx="111" cy="174" rx="56" ry="62" fill="#b9683e" stroke="#754a36" stroke-width="4"/>
-<ellipse cx="111" cy="189" rx="34" ry="40" fill="#f3dfc7"/>
-<path d="M69 135 Q50 102 64 79 Q77 61 93 94Z" fill="#a95635" stroke="#754a36" stroke-width="4"/>
-<path d="M151 135 Q171 102 157 79 Q144 61 128 94Z" fill="#a95635" stroke="#754a36" stroke-width="4"/>
-<path d="M71 112 Q75 91 86 99 L84 120Z M149 112 Q145 91 134 99 L136 120Z" fill="#e9b9a0"/>
-<ellipse cx="110" cy="116" rx="53" ry="48" fill="#c8794b" stroke="#754a36" stroke-width="4"/>
-<path d="M64 112 Q75 85 101 91 Q88 108 87 133 Q73 132 64 112Z" fill="#f1dfc9"/>
-<path d="M156 112 Q145 85 119 91 Q132 108 133 133 Q147 132 156 112Z" fill="#f1dfc9"/>
-<path d="M77 126 Q91 112 103 125 L99 142 Q86 147 76 137Z M143 126 Q129 112 117 125 L121 142 Q134 147 144 137Z" fill="#fff0dc"/>
-<ellipse cx="92" cy="126" rx="5" ry="7" fill="#342722"/><ellipse cx="128" cy="126" rx="5" ry="7" fill="#342722"/>
-<circle cx="94" cy="124" r="1.8" fill="white"/><circle cx="130" cy="124" r="1.8" fill="white"/>
-<path d="M102 145 Q110 137 118 145 Q110 155 102 145Z" fill="#4b3028"/>
-<path d="M110 152 Q105 161 97 157 M110 152 Q115 161 123 157" fill="none" stroke="#754a36" stroke-width="2" stroke-linecap="round"/>
-<ellipse cx="77" cy="146" rx="10" ry="6" fill="#e99d89" opacity=".7"/><ellipse cx="143" cy="146" rx="10" ry="6" fill="#e99d89" opacity=".7"/>
-<path d="M78 177 Q57 185 63 205 Q75 220 92 205" fill="#f0d8bd"/><path d="M144 177 Q165 185 159 205 Q147 220 130 205" fill="#f0d8bd"/>
-<path d="M76 208 Q84 215 94 210 M126 210 Q136 215 144 208" fill="none" stroke="#754a36" stroke-width="3" stroke-linecap="round"/>
-
-<!-- fine fur, facial markings and striped tail details -->
-<g fill="none" stroke="#8f5238" stroke-width="1.7" stroke-linecap="round" opacity=".62">
-<path d="M74 91l-5 -8 M81 86l-2 -8 M139 86l2 -8 M146 91l5 -8"/>
-<path d="M68 157q-5 9 -3 17 M76 163q-4 9 -2 16 M151 157q5 9 3 17 M143 163q4 9 2 16"/>
-<path d="M84 181q-5 10 -3 18 M95 188q-3 9 -1 16 M126 188q3 9 1 16 M137 181q5 10 3 18"/>
-<path d="M94 103q-7 5 -9 13 M126 103q7 5 9 13"/>
+<svg viewBox="0 0 260 290" role="img" aria-label="ふわふわの赤茶色のレッサーパンダ、ぽんず">
+<defs>
+ <radialGradient id="coat" cx="38%" cy="24%" r="78%"><stop stop-color="#e6a36c"/><stop offset=".48" stop-color="#c97845"/><stop offset="1" stop-color="#8e4d32"/></radialGradient>
+ <radialGradient id="face" cx="45%" cy="24%" r="78%"><stop stop-color="#f5d9b7"/><stop offset=".72" stop-color="#e9c39d"/><stop offset="1" stop-color="#c9916b"/></radialGradient>
+ <linearGradient id="ear" x2="0" y2="1"><stop stop-color="#c9784c"/><stop offset="1" stop-color="#8d4932"/></linearGradient>
+ <linearGradient id="belly" x2="0" y2="1"><stop stop-color="#fff0d9"/><stop offset="1" stop-color="#dfc3a3"/></linearGradient>
+ <linearGradient id="tail" x2="1" y2=".3"><stop stop-color="#b9663c"/><stop offset=".5" stop-color="#e1a06a"/><stop offset="1" stop-color="#a85b38"/></linearGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="2.5"/></filter>
+ <filter id="furShadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="3"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".2"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- soft floor shadow -->
+<ellipse cx="130" cy="266" rx="77" ry="13" fill="#60402f" opacity=".16" filter="url(#soft)"/>
+<!-- enormous fluffy ringed tail behind the body -->
+<path d="M92 207 C43 224 23 266 51 275 C78 285 119 257 128 224 C136 197 116 190 92 207Z" fill="url(#tail)" stroke="#85482f" stroke-width="3"/>
+<path d="M48 263 Q62 274 77 263 Q89 253 96 244" fill="none" stroke="#f1c18d" stroke-width="13" stroke-linecap="round"/>
+<path d="M42 250 Q55 258 70 249 Q81 243 88 231" fill="none" stroke="#85482f" stroke-width="9" stroke-linecap="round"/>
+<path d="M57 273 Q72 278 87 266" fill="none" stroke="#f3d0a7" stroke-width="7" stroke-linecap="round"/>
+<!-- body, round and plush -->
+<path d="M72 174 C63 190 59 218 71 239 Q91 260 132 259 Q174 259 190 236 C201 213 190 181 174 166Z" fill="url(#coat)" stroke="#874a31" stroke-width="3"/>
+<path d="M91 191 Q77 215 91 244 Q109 257 132 255 Q157 256 172 241 Q183 218 166 191 Q143 177 91 191Z" fill="url(#belly)" opacity=".98"/>
+<!-- shoulders and tiny paws -->
+<path d="M76 202 Q58 207 62 229 Q66 245 87 240 L102 221Z" fill="#b96840" stroke="#874a31" stroke-width="2.5"/>
+<path d="M183 202 Q201 207 197 229 Q193 245 172 240 L157 221Z" fill="#b96840" stroke="#874a31" stroke-width="2.5"/>
+<path d="M65 229 Q76 239 91 230" fill="none" stroke="#f4d8b8" stroke-width="8" stroke-linecap="round"/>
+<path d="M168 230 Q183 239 194 229" fill="none" stroke="#f4d8b8" stroke-width="8" stroke-linecap="round"/>
+<!-- ears, with soft rounded tips -->
+<path d="M66 91 Q48 46 69 35 Q91 26 108 76 Q111 91 99 105Z" fill="url(#ear)" stroke="#874a31" stroke-width="3.5"/>
+<path d="M77 83 Q63 52 73 47 Q84 45 96 82 Q91 91 84 93Z" fill="#edb69d"/>
+<path d="M158 76 Q176 26 197 35 Q218 46 200 91 L167 105Z" fill="url(#ear)" stroke="#874a31" stroke-width="3.5"/>
+<path d="M170 82 Q184 45 195 47 Q205 52 191 83 Q184 91 177 93Z" fill="#edb69d"/>
+<!-- head silhouette -->
+<path d="M53 124 C49 87 78 63 111 66 Q130 58 149 66 C182 63 211 88 207 126 Q205 171 176 190 Q151 207 130 205 Q105 207 82 190 Q55 171 53 124Z" fill="url(#coat)" stroke="#874a31" stroke-width="3.5" filter="url(#furShadow)"/>
+<!-- pale forehead blaze and fluffy cheek ruffs -->
+<path d="M111 72 Q130 64 149 72 Q139 91 143 111 Q130 121 117 111 Q121 91 111 72Z" fill="#f0d4b0" opacity=".95"/>
+<path d="M63 130 Q52 148 68 168 Q80 181 96 171 Q91 151 99 135 Q80 124 63 130Z" fill="url(#face)"/>
+<path d="M197 130 Q208 148 192 168 Q180 181 164 171 Q169 151 161 135 Q180 124 197 130Z" fill="url(#face)"/>
+<!-- distinctive pale facial mask, not raccoon rings -->
+<path d="M67 121 Q77 98 105 105 Q117 111 116 134 Q108 150 92 151 Q74 148 67 135Z" fill="#f4e4cb"/>
+<path d="M193 121 Q183 98 155 105 Q143 111 144 134 Q152 150 168 151 Q186 148 193 135Z" fill="#f4e4cb"/>
+<!-- warm cinnamon eye patches -->
+<path d="M79 119 Q94 106 110 119 Q116 132 106 146 Q92 155 77 143 Q70 132 79 119Z" fill="#a95e3e" opacity=".96"/>
+<path d="M181 119 Q166 106 150 119 Q144 132 154 146 Q168 155 183 143 Q190 132 181 119Z" fill="#a95e3e" opacity=".96"/>
+<!-- eye highlights and soft eyelids -->
+<ellipse cx="97" cy="132" rx="7.2" ry="9.5" fill="#2b211d"/>
+<ellipse cx="163" cy="132" rx="7.2" ry="9.5" fill="#2b211d"/>
+<ellipse cx="99" cy="128" rx="2.7" ry="3.2" fill="#fff9ee"/>
+<ellipse cx="165" cy="128" rx="2.7" ry="3.2" fill="#fff9ee"/>
+<circle cx="93" cy="136" r="1.4" fill="#dca77d"/><circle cx="159" cy="136" r="1.4" fill="#dca77d"/>
+<path d="M87 119 Q97 112 108 119 M152 119 Q163 112 173 119" fill="none" stroke="#874a31" stroke-width="2.4" stroke-linecap="round"/>
+<!-- muzzle: two plump ivory cushions -->
+<path d="M105 148 Q111 138 125 144 Q130 147 130 156 Q124 168 112 166 Q101 163 100 155Z" fill="#fff0da"/>
+<path d="M130 156 Q130 147 135 144 Q149 138 155 148 L160 155 Q159 163 148 166 Q136 168 130 156Z" fill="#fff0da"/>
+<ellipse cx="130" cy="151" rx="7" ry="5.5" fill="#49312a"/>
+<path d="M130 157 Q126 166 117 164 M130 157 Q134 166 143 164" fill="none" stroke="#754735" stroke-width="2" stroke-linecap="round"/>
+<!-- subtle smile and whisker freckles -->
+<path d="M119 171 Q130 178 141 171" fill="none" stroke="#8b5741" stroke-width="1.8" stroke-linecap="round"/>
+<g fill="#9b654b"><circle cx="105" cy="158" r="1.2"/><circle cx="110" cy="162" r="1"/><circle cx="150" cy="158" r="1.2"/><circle cx="145" cy="162" r="1"/></g>
+<ellipse cx="83" cy="158" rx="12" ry="7" fill="#e99c8a" opacity=".38"/><ellipse cx="177" cy="158" rx="12" ry="7" fill="#e99c8a" opacity=".38"/>
+<!-- layered fur tufts around cheeks and crown -->
+<g fill="none" stroke-linecap="round">
+ <g stroke="#f2c18e" stroke-width="2.3" opacity=".9">
+  <path d="M67 105l-7 -8 M74 94l-4 -9 M88 79l-2 -8 M103 73l-1 -7 M157 73l1 -7 M172 79l2 -8 M187 94l4 -9 M194 105l7 -8"/>
+  <path d="M62 143l-8 3 M65 153l-8 7 M73 166l-7 8 M187 166l7 8 M195 153l8 7 M198 143l8 3"/>
+  <path d="M79 184l-5 9 M91 190l-3 10 M169 190l3 10 M181 184l5 9"/>
+ </g>
+ <g stroke="#874a31" stroke-width="1.4" opacity=".58">
+  <path d="M75 102l-5 -7 M85 91l-3 -8 M98 84l-1 -7 M162 84l1 -7 M175 91l3 -8 M185 102l5 -7"/>
+  <path d="M71 174l-5 7 M82 180l-3 8 M178 180l3 8 M189 174l5 7"/>
+  <path d="M91 211l-3 8 M104 216l-1 8 M155 216l1 8 M168 211l3 8"/>
+ </g>
 </g>
-<g fill="none" stroke="#f7e8d5" stroke-width="2.2" stroke-linecap="round" opacity=".9">
-<path d="M47 222q7 7 14 2 M55 212q7 7 14 2 M65 202q7 6 13 1"/>
-<path d="M82 116q-8 2 -12 8 M138 116q8 2 12 8"/>
+<!-- fine chest and body fur -->
+<g fill="none" stroke="#fff0d9" stroke-width="1.8" stroke-linecap="round" opacity=".7">
+ <path d="M112 190q-5 7 -3 13 M124 194q-3 7 -1 13 M137 194q3 7 1 13 M149 190q5 7 3 13"/>
+ <path d="M95 235q6 5 12 3 M145 238q7 2 12 -3"/>
 </g>
-<g fill="none" stroke="#6c4939" stroke-width="1.2" stroke-linecap="round">
-<path d="M84 148l-17 -3 M84 153l-18 4 M136 148l17 -3 M136 153l18 4"/>
+<!-- whiskers -->
+<g fill="none" stroke="#f6e8d5" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+ <path d="M101 158 Q80 153 68 158 M102 163 Q82 164 70 171 M159 158 Q180 153 192 158 M158 163 Q178 164 190 171"/>
+</g>
+<!-- little paw toes -->
+<g fill="none" stroke="#754735" stroke-width="1.4" stroke-linecap="round">
+ <path d="M73 233l-1 5 M82 234l-1 5 M178 234l1 5 M187 233l1 5"/>
 </g>
 </svg></div>
 </section>
