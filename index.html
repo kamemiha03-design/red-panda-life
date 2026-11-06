@@ -1,86 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7eee5">
-<title>まいにち、レッサー。</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7eee7">
+<title>ぽんずと暮らす | レッサーパンダ育成日記</title>
 <style>
-:root{--ink:#49382f;--cream:#fff9f1;--peach:#e9a17c;--green:#91a78c;--line:#ead9ca}
-*{box-sizing:border-box}body{margin:0;background:#f4e9dc;color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
-main{max-width:980px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.top h1{font-size:clamp(22px,5vw,34px);margin:0}.sub{font-size:12px;color:#927d6e}
-.room{position:relative;min-height:390px;overflow:hidden;border:8px solid #fffaf4;border-radius:24px;background:linear-gradient(#f8e7d6 0 68%,#b98b6d 68%);box-shadow:0 8px 25px #78553a22}
-.window{position:absolute;left:7%;top:9%;width:26%;height:38%;background:linear-gradient(#b9d7dc,#f5e6c9);border:9px solid #fff8ed;border-radius:8px;box-shadow:inset 0 0 0 3px #c8a98d}
-.window:before,.window:after{content:"";position:absolute;background:#fff8ed}.window:before{width:7px;height:100%;left:50%}.window:after{height:7px;width:100%;top:50%}
-.curtain{position:absolute;top:6%;left:5%;width:30%;height:42%;border-left:14px solid #d8a58c;border-right:14px solid #d8a58c;pointer-events:none}
-.shelf{position:absolute;right:7%;top:14%;width:24%;height:13%;border-bottom:12px solid #9a684b;background:linear-gradient(90deg,transparent 0 8%,#c77d57 8% 19%,transparent 19% 27%,#8b9e7c 27% 39%,transparent 39% 48%,#d7b16c 48% 61%,transparent 61% 70%,#bd816b 70% 82%,transparent 82%);filter:drop-shadow(0 4px 2px #76523b22)}
-.plant{position:absolute;bottom:29%;right:8%;font-size:52px}.rug{position:absolute;bottom:3%;left:26%;width:48%;height:22%;border-radius:50%;background:#d8b9a1;opacity:.75}
-.sofa{position:absolute;bottom:17%;left:5%;width:28%;height:22%;border-radius:22px 22px 12px 12px;background:#82947c;box-shadow:inset 0 -12px #667b68}
-.sofa:before{content:"";position:absolute;left:-7px;right:-7px;bottom:-8px;height:18px;border-radius:10px;background:#657966}
-.pillow{position:absolute;left:20%;top:15%;width:26%;height:44%;border-radius:9px;background:#e7c29f}
-.desk{position:absolute;right:5%;bottom:18%;width:27%;height:9%;background:#9c6b4b;border-radius:5px}.desk:after{content:"";position:absolute;left:12%;right:12%;top:100%;height:45px;border-left:7px solid #80553d;border-right:7px solid #80553d}
-.laptop{position:absolute;right:12%;bottom:28%;width:12%;height:10%;border:5px solid #6e7776;border-bottom-width:8px;background:#b8d3d1;border-radius:4px}
-.pet{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);width:190px;height:190px;display:grid;place-items:center;filter:drop-shadow(0 7px 4px #51311d22);transition:transform .25s}
-.pet.bounce{transform:translateX(-50%) translateY(-12px) rotate(-3deg)}
-svg{width:100%;height:100%;overflow:visible}.speech{position:absolute;left:50%;bottom:88%;transform:translateX(-50%);background:#fffaf4;border-radius:18px;padding:8px 13px;font-size:13px;white-space:nowrap;box-shadow:0 3px 12px #49382f22;opacity:0;transition:opacity .2s}.speech.show{opacity:1}
-.panel{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}.card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 5px 15px #76553a0c}.card h2{font-size:17px;margin:0 0 12px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{font-size:13px}.statline{display:flex;justify-content:space-between;margin-bottom:5px}.bar{height:9px;background:#eee1d5;border-radius:20px;overflow:hidden}.fill{height:100%;border-radius:20px;background:var(--green);transition:width .3s}.fill.low{background:#d88d72}
-.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.actions button{border:1px solid #e6d2c1;background:#fffdf9;border-radius:14px;padding:12px 5px;color:var(--ink);font-weight:650;font-size:13px;cursor:pointer;transition:.15s}.actions button:active{transform:scale(.96);background:#f8e8da}.actions span{display:block;font-size:22px;margin-bottom:4px}
-.progress{margin-top:13px;font-size:13px}.progress .bar{height:11px;margin-top:6px}.log{font-size:13px;line-height:1.7;color:#816e60;min-height:48px}.name{border:0;border-bottom:1px dashed #c8a98d;background:transparent;color:var(--ink);font:inherit;font-weight:700;width:110px}
-@media(max-width:650px){main{padding:12px}.room{min-height:340px}.pet{width:160px;height:160px}.panel{grid-template-columns:1fr}.sofa{width:34%}.desk{width:30%}.plant{font-size:42px}.actions button{padding:10px 2px}}
+:root{--ink:#493a34;--muted:#8b776d;--cream:#fffaf5;--pink:#e9b5a4;--sage:#9eae91;--line:#eadbd0;--gold:#d9ad68}
+*{box-sizing:border-box}body{margin:0;background:#f3e9e1;color:var(--ink);font-family:ui-rounded,"Hiragino Maru Gothic ProN","Yu Gothic",system-ui,sans-serif}
+button{font:inherit;cursor:pointer} .app{max-width:1080px;margin:auto;padding:18px 16px 32px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:4px 0 16px}
+h1{font-size:clamp(23px,4vw,34px);margin:0;letter-spacing:.04em}.brand small{color:var(--muted);letter-spacing:.12em}
+.day{background:#fff9;border:1px solid var(--line);border-radius:99px;padding:9px 14px;font-size:13px}
+.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.85fr);gap:16px}
+.room{position:relative;min-height:570px;overflow:hidden;border:7px solid #fff9f3;border-radius:25px;background:linear-gradient(#dce8e4 0 48%,#d9c4ad 48% 50%,#c6a78e 50%);box-shadow:0 12px 32px #72523b18}
+.wall{position:absolute;inset:0 0 50% 0;background:linear-gradient(90deg,#f2dfd2,#f8e9df 50%,#f0ddd0)}
+.window{position:absolute;top:9%;left:8%;width:31%;height:29%;border:9px solid #fff8ed;border-radius:5px;background:linear-gradient(#b8d4d3 0 60%,#d8e5c9 60%);box-shadow:0 3px 8px #755b4820}
+.window:before,.window:after{content:"";position:absolute;background:#fff8ed}.window:before{width:6px;top:0;bottom:0;left:50%}.window:after{height:6px;left:0;right:0;top:55%}
+.curtain{position:absolute;top:7%;left:5%;width:37%;height:33%;border-left:12px solid #d7a99c;border-right:12px solid #d7a99c;opacity:.8}
+.shelf{position:absolute;right:7%;top:12%;width:30%;height:18%;border-top:8px solid #a77e60;background:linear-gradient(90deg,transparent 0 5%,#d2b89f 5% 29%,transparent 29% 36%,#d2b89f 36% 62%,transparent 62% 69%,#d2b89f 69% 95%,transparent 95%);filter:drop-shadow(0 5px 2px #755b4820)}
+.plant{position:absolute;left:7%;bottom:17%;width:62px;height:105px}.plant:before{content:"";position:absolute;bottom:0;left:10px;width:44px;height:42px;background:#bd8d70;border-radius:5px 5px 15px 15px}.plant:after{content:"";position:absolute;left:28px;top:4px;width:9px;height:65px;background:#78916e;transform:rotate(-7deg);box-shadow:-20px 19px 0 -2px #78916e,19px 28px 0 -2px #78916e}
+.sofa{position:absolute;right:5%;bottom:17%;width:35%;height:105px;background:#b78e7b;border-radius:25px 25px 13px 13px;box-shadow:inset 0 -12px #a77e6b}
+.sofa:before{content:"";position:absolute;left:-10px;right:-10px;bottom:0;height:45px;background:#c69f8d;border-radius:12px;z-index:-1}
+.rug{position:absolute;left:24%;right:17%;bottom:5%;height:110px;background:#e8d5c1;border-radius:50%;opacity:.95}
+.floorline{position:absolute;left:0;right:0;bottom:0;height:16%;background:repeating-linear-gradient(90deg,#b99578 0 2px,#c5a486 2px 110px)}
+.pet{position:absolute;left:50%;bottom:17%;width:210px;height:245px;transform:translateX(-50%);display:grid;place-items:center;transition:transform .3s}
+.pet svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 8px 5px #5b3b3025)}
+.pet.bounce{animation:bounce .45s ease}.pet.sleeping{transform:translateX(-50%) rotate(-8deg);filter:saturate(.7)}
+@keyframes bounce{50%{transform:translate(-50%,-15px) rotate(4deg)}}
+.speech{position:absolute;top:8%;right:6%;max-width:190px;background:#fffdf8;border:1px solid var(--line);padding:10px 14px;border-radius:18px;font-size:13px;box-shadow:0 5px 16px #65452c16}
+.speech:after{content:"";position:absolute;left:24px;bottom:-8px;width:14px;height:14px;background:#fffdf8;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
+.side{display:flex;flex-direction:column;gap:13px}.panel{background:#fffaf5;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 7px 20px #72523b0c}
+.petname{display:flex;justify-content:space-between;align-items:center}.petname h2{font-size:21px;margin:0}.stage{font-size:11px;background:#f3e4d8;border-radius:99px;padding:6px 10px;color:#856d5e}
+.stats{display:grid;gap:12px;margin-top:14px}.stat{display:grid;grid-template-columns:78px 1fr 34px;gap:8px;align-items:center;font-size:12px}.track{height:10px;border-radius:99px;background:#eee5dc;overflow:hidden}.fill{height:100%;width:70%;border-radius:99px;background:var(--sage);transition:width .35s}.stat:nth-child(1) .fill{background:#e5b46f}.stat:nth-child(2) .fill{background:#e5a6a1}.stat:nth-child(3) .fill{background:#a4b895}.stat:nth-child(4) .fill{background:#9db5c4}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.action{border:1px solid var(--line);background:#fffdf9;border-radius:15px;padding:11px 5px;color:var(--ink);font-size:12px;transition:.15s}.action:active{transform:scale(.96);background:#f6e9df}.action span{display:block;font-size:23px;margin-bottom:4px}
+.growth-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}.growthbar{height:9px;background:#eee5dc;border-radius:99px;overflow:hidden}.growthbar div{height:100%;background:linear-gradient(90deg,#d9b27b,#e7a79a);width:0%;transition:width .3s}
+.note{font-size:12px;color:var(--muted);line-height:1.7;margin:9px 0 0}.log{font-size:12px;color:var(--muted);line-height:1.7;min-height:38px}
+footer{text-align:center;color:#9c897d;font-size:11px;margin:17px 0 0}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.room{min-height:470px}.pet{width:185px;height:220px;bottom:16%}.speech{max-width:155px;font-size:12px}.side{display:grid;grid-template-columns:1fr}.app{padding:13px 11px 24px}}
+@media(max-width:390px){.room{min-height:420px}.pet{width:160px;height:200px}.actions{gap:6px}.action{font-size:11px}}
 </style>
 </head>
 <body>
-<main>
-<header class="top"><div><h1>まいにち、レッサー。</h1><div class="sub">小さな同居人との、のんびり暮らし。</div></div><div class="sub">おへやで育てる育成ゲーム</div></header>
-<section class="room" aria-label="レッサーパンダのお部屋">
-<div class="window"></div><div class="curtain"></div><div class="shelf"></div><div class="plant">🪴</div><div class="sofa"><div class="pillow"></div></div><div class="desk"></div><div class="laptop"></div><div class="rug"></div>
+<div class="app">
+<header><div class="brand"><h1>ぽんずと暮らす 🧡</h1><small>ちいさな家族との、のんびり育成日記</small></div><div class="day" id="day">☀ 1日目</div></header>
+<div class="layout">
+<section class="room" aria-label="ぽんずのお部屋">
+<div class="wall"></div><div class="window"></div><div class="curtain"></div><div class="shelf"></div><div class="plant"></div><div class="sofa"></div><div class="rug"></div><div class="floorline"></div>
+<div class="speech" id="speech">こんにちは！きょうも一緒にいようね。</div>
 <div class="pet" id="pet">
-<div class="speech" id="speech">おなかすいたな…</div>
-<svg viewBox="0 0 220 220" role="img" aria-label="かわいいレッサーパンダ">
-<defs><linearGradient id="fur" x2="0" y2="1"><stop stop-color="#c8794f"/><stop offset="1" stop-color="#8f4934"/></linearGradient><linearGradient id="cream" x2="0" y2="1"><stop stop-color="#fff0d9"/><stop offset="1" stop-color="#e8c9a6"/></linearGradient></defs>
-<path d="M153 151 Q205 175 195 124 Q190 103 171 117 Q204 94 213 122 Q228 166 177 181 Q151 189 137 169" fill="url(#fur)" stroke="#75402f" stroke-width="4"/>
-<path d="M170 151 Q197 157 205 132 M157 164 Q185 177 202 153" fill="none" stroke="#f1c18c" stroke-width="9" stroke-linecap="round"/>
-<ellipse cx="108" cy="160" rx="57" ry="45" fill="url(#fur)"/>
-<ellipse cx="108" cy="174" rx="35" ry="27" fill="url(#cream)"/>
-<path d="M63 79 L58 28 Q57 17 70 27 L94 52 M128 52 L153 27 Q166 17 164 33 L154 84" fill="#9e5238" stroke="#713b2d" stroke-width="5"/>
-<path d="M67 39 L83 57 L68 59Z M154 39 L138 58 L154 59Z" fill="#e9b5a0"/>
-<ellipse cx="109" cy="91" rx="58" ry="55" fill="url(#fur)"/>
-<path d="M61 84 Q73 58 91 71 Q100 82 91 103 Q80 121 61 111 Q48 101 61 84Z" fill="url(#cream)"/>
-<path d="M157 84 Q145 58 127 71 Q118 82 127 103 Q138 121 157 111 Q170 101 157 84Z" fill="url(#cream)"/>
-<path d="M78 83 Q87 73 96 86 M122 86 Q132 73 141 83" fill="none" stroke="#f8e8ce" stroke-width="7" stroke-linecap="round"/>
-<ellipse cx="91" cy="91" rx="5" ry="7" fill="#30241f"/><ellipse cx="128" cy="91" rx="5" ry="7" fill="#30241f"/>
-<ellipse cx="109" cy="111" rx="25" ry="18" fill="url(#cream)"/><path d="M102 107 Q109 99 116 107 Q114 115 109 115 Q104 115 102 107Z" fill="#49312b"/>
-<path d="M109 115 Q108 124 100 124 M109 115 Q110 124 118 124" fill="none" stroke="#6e4939" stroke-width="2" stroke-linecap="round"/>
-<path d="M74 135 Q109 147 144 135" fill="none" stroke="#7b4431" stroke-width="4" stroke-linecap="round"/>
-<ellipse cx="83" cy="190" rx="17" ry="8" fill="#6e4031"/><ellipse cx="135" cy="190" rx="17" ry="8" fill="#6e4031"/>
+<svg viewBox="0 0 220 250" role="img" aria-label="赤茶色のレッサーパンダのぽんず">
+<ellipse cx="110" cy="222" rx="66" ry="12" fill="#8d6855" opacity=".15"/>
+<path d="M70 180 C35 193 20 225 43 234 C69 244 96 218 103 195" fill="#b96e43" stroke="#754a36" stroke-width="4"/>
+<path d="M44 226 Q56 237 69 226 Q78 216 85 210" fill="none" stroke="#f0c28f" stroke-width="8" stroke-linecap="round"/>
+<ellipse cx="111" cy="174" rx="56" ry="62" fill="#b9683e" stroke="#754a36" stroke-width="4"/>
+<ellipse cx="111" cy="189" rx="34" ry="40" fill="#f3dfc7"/>
+<path d="M69 135 Q50 102 64 79 Q77 61 93 94Z" fill="#a95635" stroke="#754a36" stroke-width="4"/>
+<path d="M151 135 Q171 102 157 79 Q144 61 128 94Z" fill="#a95635" stroke="#754a36" stroke-width="4"/>
+<path d="M71 112 Q75 91 86 99 L84 120Z M149 112 Q145 91 134 99 L136 120Z" fill="#e9b9a0"/>
+<ellipse cx="110" cy="116" rx="53" ry="48" fill="#c8794b" stroke="#754a36" stroke-width="4"/>
+<path d="M64 112 Q75 85 101 91 Q88 108 87 133 Q73 132 64 112Z" fill="#f1dfc9"/>
+<path d="M156 112 Q145 85 119 91 Q132 108 133 133 Q147 132 156 112Z" fill="#f1dfc9"/>
+<path d="M77 126 Q91 112 103 125 L99 142 Q86 147 76 137Z M143 126 Q129 112 117 125 L121 142 Q134 147 144 137Z" fill="#fff0dc"/>
+<ellipse cx="92" cy="126" rx="5" ry="7" fill="#342722"/><ellipse cx="128" cy="126" rx="5" ry="7" fill="#342722"/>
+<circle cx="94" cy="124" r="1.8" fill="white"/><circle cx="130" cy="124" r="1.8" fill="white"/>
+<path d="M102 145 Q110 137 118 145 Q110 155 102 145Z" fill="#4b3028"/>
+<path d="M110 152 Q105 161 97 157 M110 152 Q115 161 123 157" fill="none" stroke="#754a36" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="77" cy="146" rx="10" ry="6" fill="#e99d89" opacity=".7"/><ellipse cx="143" cy="146" rx="10" ry="6" fill="#e99d89" opacity=".7"/>
+<path d="M78 177 Q57 185 63 205 Q75 220 92 205" fill="#f0d8bd"/><path d="M144 177 Q165 185 159 205 Q147 220 130 205" fill="#f0d8bd"/>
+<path d="M76 208 Q84 215 94 210 M126 210 Q136 215 144 208" fill="none" stroke="#754a36" stroke-width="3" stroke-linecap="round"/>
 </svg></div>
 </section>
+<aside class="side">
 <section class="panel">
-<div class="card"><h2>🐾 <input class="name" id="petName" value="ぽんず" maxlength="8" aria-label="名前"> のようす</h2><div class="stats" id="stats"></div><div class="progress"><div class="statline"><b id="stage">赤ちゃん</b><span id="xpText">成長 0 / 100</span></div><div class="bar"><div class="fill" id="xpBar" style="width:0%"></div></div></div></div>
-<div class="card"><h2>いっしょに過ごそう</h2><div class="actions">
-<button data-action="feed"><span>🍎</span>ごはん</button><button data-action="play"><span>🧶</span>あそぶ</button><button data-action="pet"><span>🤎</span>なでる</button><button data-action="clean"><span>🧹</span>おそうじ</button><button data-action="nap"><span>💤</span>おひるね</button><button data-action="talk"><span>💬</span>おはなし</button>
-</div></div>
-<div class="card" style="grid-column:1/-1"><h2>📖 きょうの記録</h2><div class="log" id="log">ぽんずがあなたのお部屋にやってきた！まずは仲良くなろう。</div></div>
+<div class="petname"><h2>ぽんず</h2><span class="stage" id="stage">赤ちゃん</span></div>
+<div class="stats">
+<div class="stat"><span>🍎 おなか</span><div class="track"><div class="fill" id="hunger"></div></div><b id="hungerN">72</b></div>
+<div class="stat"><span>💗 ごきげん</span><div class="track"><div class="fill" id="mood"></div></div><b id="moodN">76</b></div>
+<div class="stat"><span>🫧 きれい</span><div class="track"><div class="fill" id="clean"></div></div><b id="cleanN">85</b></div>
+<div class="stat"><span>🌙 げんき</span><div class="track"><div class="fill" id="energy"></div></div><b id="energyN">80</b></div>
+</div>
 </section>
-</main>
+<section class="panel"><div class="actions">
+<button class="action" data-act="feed"><span>🥕</span>ごはん</button>
+<button class="action" data-act="play"><span>🧶</span>あそぶ</button>
+<button class="action" data-act="pet"><span>🫶</span>なでる</button>
+<button class="action" data-act="clean"><span>🧹</span>おそうじ</button>
+<button class="action" data-act="sleep"><span>🛏️</span>おひるね</button>
+<button class="action" data-act="talk"><span>💬</span>おはなし</button>
+</div></section>
+<section class="panel"><div class="growth-head"><b>🌱 成長アルバム</b><span id="growthText">0 / 100</span></div><div class="growthbar"><div id="growth"></div></div><p class="note" id="growthNote">お世話を重ねると、ぽんずが少しずつ成長するよ。</p></section>
+<section class="panel"><b style="font-size:13px">📖 きょうの記録</b><p class="log" id="log">ぽんずがお部屋にやってきた！まずは仲良くなろう。</p></section>
+</aside></div>
+<footer>ぽんずのペースで、ゆっくり仲良くなろう。セーブはこの端末のブラウザに保存されます。</footer>
+</div>
 <script>
-const state={hunger:76,mood:72,clean:88,energy:80,xp:0,stage:0};
-const labels={hunger:"おなか",mood:"ごきげん",clean:"きれい",energy:"元気"};
-const stages=["赤ちゃん","こども","若者","おとな"];
-const stats=document.getElementById("stats"),log=document.getElementById("log"),speech=document.getElementById("speech"),pet=document.getElementById("pet");
-function render(){stats.innerHTML=Object.keys(labels).map(k=>'<div class="stat"><div class="statline"><span>'+labels[k]+'</span><b>'+state[k]+'%</b></div><div class="bar"><div class="fill '+(state[k]<30?'low':'')+'" style="width:'+state[k]+'%"></div></div></div>').join('');document.getElementById("stage").textContent=stages[state.stage];document.getElementById("xpText").textContent='成長 '+state.xp+' / 100';document.getElementById("xpBar").style.width=state.xp+'%'}
-const actions={
-feed:{text:"おいしそうにごはんを食べている！",say:"むしゃむしゃ！",change:{hunger:24,mood:5,energy:3}},
-play:{text:"おもちゃを追いかけて夢中で遊んだ！",say:"まてまて〜！",change:{mood:20,energy:-17,hunger:-8}},
-pet:{text:"やさしくなでたら、うれしそうに目を細めた。",say:"そこ、きもちいい…",change:{mood:16,energy:4}},
-clean:{text:"お部屋をきれいにした。ぽんずも快適そう！",say:"すっきり！",change:{clean:28,mood:5}},
-nap:{text:"ふかふかのラグでお昼寝。元気が戻った！",say:"すやすや…",change:{energy:27,hunger:-7,mood:5}},
-talk:{text:"今日あったことを話した。じっと聞いてくれた。",say:"うんうん！",change:{mood:12}}
-};
-document.querySelectorAll("button[data-action]").forEach(b=>b.addEventListener("click",()=>{const a=actions[b.dataset.action];for(const [k,v] of Object.entries(a.change))state[k]=Math.max(0,Math.min(100,state[k]+v));state.xp=Math.min(100,state.xp+12);if(state.xp===100&&state.stage<3){state.stage++;state.xp=0;log.textContent='🎉 '+stages[state.stage]+'に成長した！少しずつ大人になっていくね。';}else log.textContent=a.text; speech.textContent=a.say;speech.classList.add("show");pet.classList.add("bounce");setTimeout(()=>{speech.classList.remove("show");pet.classList.remove("bounce")},1100);render()}));
-document.getElementById("petName").addEventListener("input",e=>{document.title=e.target.value+"と、まいにち。"});
+const initial={hunger:72,mood:76,clean:85,energy:80,growth:0,day:1};
+let s={...initial};try{const saved=JSON.parse(localStorage.getItem('ponzu-save'));if(saved)s={...s,...saved}}catch(e){}
+const $=id=>document.getElementById(id);
+const stages=['赤ちゃん','こども','若者','おとな'];
+const lines={feed:'もぐもぐ……おいしい！',play:'わーい！そのおもちゃ大好き！',pet:'えへへ、そこ気持ちいいな。',clean:'お部屋がぴかぴか！すっきりしたよ。',sleep:'すやすや……ちょっと休憩。',talk:'あなたと一緒にいると安心するよ。'};
+function stageIndex(){return Math.min(3,Math.floor(s.growth/100))}
+function render(){['hunger','mood','clean','energy'].forEach(k=>{$(k).style.width=s[k]+'%';$(k+'N').textContent=s[k]});$('growth').style.width=(s.growth%100)+'%';$('growthText').textContent=(s.growth%100)+' / 100';$('stage').textContent=stages[stageIndex()];$('day').textContent='☀ '+s.day+'日目';$('growthNote').textContent=stageIndex()===3?'立派なおとなになったよ！これからも一緒に過ごそう。':'次の成長まであと '+(100-s.growth%100)+' ポイント。毎日のお世話が力になるよ。';localStorage.setItem('ponzu-save',JSON.stringify(s))}
+function act(a){let msg=lines[a];const p=$('pet');p.classList.remove('bounce','sleeping');void p.offsetWidth;
+if(a==='feed'){s.hunger=Math.min(100,s.hunger+24);s.mood=Math.min(100,s.mood+5);s.clean=Math.max(0,s.clean-2)}
+if(a==='play'){if(s.energy<15){msg='ちょっと眠たいみたい。先に休ませてあげよう。'}else{s.mood=Math.min(100,s.mood+18);s.energy=Math.max(0,s.energy-15);s.hunger=Math.max(0,s.hunger-7)}}
+if(a==='pet'){s.mood=Math.min(100,s.mood+13);s.energy=Math.min(100,s.energy+3)}
+if(a==='clean'){s.clean=100;s.mood=Math.min(100,s.mood+4)}
+if(a==='sleep'){s.energy=100;s.hunger=Math.max(0,s.hunger-5);p.classList.add('sleeping')}
+if(a==='talk'){s.mood=Math.min(100,s.mood+8)}
+if(a!=='sleep')p.classList.add('bounce');
+if(msg===lines[a]){let before=stageIndex();s.growth=Math.min(300,s.growth+12);if(stageIndex()>before)msg='やった！ぽんずが「'+stages[stageIndex()]+'」に成長したよ！';}
+$('speech').textContent=msg;$('log').textContent='「'+({feed:'ごはん',play:'あそび',pet:'なでなで',clean:'おそうじ',sleep:'おひるね',talk:'おはなし'}[a])+'」をしたよ。'+msg;render()}
+document.querySelectorAll('[data-act]').forEach(b=>b.addEventListener('click',()=>act(b.dataset.act)));
+setInterval(()=>{s.hunger=Math.max(0,s.hunger-1);s.energy=Math.max(0,s.energy-0.4);s.clean=Math.max(0,s.clean-0.25);render()},60000);
 render();
 </script>
-</body>
-</html>
+</body></html>
